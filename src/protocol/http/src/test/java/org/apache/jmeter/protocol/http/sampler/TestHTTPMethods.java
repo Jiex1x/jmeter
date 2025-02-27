@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
- package org.apache.jmeter.protocol.http.sampler;
+package org.apache.jmeter.protocol.http.sampler;
 
 
  import static org.junit.jupiter.api.Assertions.assertEquals;
  import org.apache.jmeter.protocol.http.util.HTTPConstants;
  import org.junit.jupiter.api.Test;
- 
+
  public class TestHTTPMethods {
      @Test
      public void testDifferentHttpMethods() throws Exception {
@@ -33,7 +33,7 @@
          getSampler.setDomain("example.com");
          getSampler.addArgument("param1", "value1");
          assertEquals("http://example.com/index.html?param1=value1", getSampler.getUrl().toString());
- 
+
          // Test POST method
          HTTPSamplerBase postSampler = new HTTPNullSampler();
          postSampler.setProtocol("http");
@@ -42,7 +42,7 @@
          postSampler.setDomain("example.com");
          postSampler.addArgument("param1", "value1");
          assertEquals("http://example.com/index.html", postSampler.getUrl().toString());
- 
+
          // Test PUT method
          HTTPSamplerBase putSampler = new HTTPNullSampler();
          putSampler.setProtocol("http");
@@ -51,7 +51,7 @@
          putSampler.setDomain("example.com");
          putSampler.addArgument("param1", "value1");
          assertEquals("http://example.com/index.html", putSampler.getUrl().toString());
- 
+
          // Test DELETE method
          HTTPSamplerBase deleteSampler = new HTTPNullSampler();
          deleteSampler.setProtocol("http");

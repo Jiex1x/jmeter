@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
- package org.apache.jmeter.protocol.http.sampler;
+package org.apache.jmeter.protocol.http.sampler;
 
  import static org.junit.jupiter.api.Assertions.assertEquals;
  import org.apache.jmeter.protocol.http.util.HTTPConstants;
  import org.junit.jupiter.api.Test;
- 
+
  public class TestHTTPPayloads {
      @Test
      public void testPayloadSizes() throws Exception {
@@ -30,7 +30,7 @@
          emptySampler.setPath("/upload");
          emptySampler.setDomain("example.com");
          assertEquals("http://example.com/upload", emptySampler.getUrl().toString());
- 
+
          // Small payload (5 KB)
          HTTPSamplerBase smallSampler = new HTTPNullSampler();
          smallSampler.setMethod(HTTPConstants.POST);
@@ -39,7 +39,7 @@
          String smallData = "a".repeat(5 * 1024);
          smallSampler.addNonEncodedArgument("data", smallData, "");
          assertEquals(5 * 1024, smallData.length());
- 
+
          // Large payload (2 MB)
          HTTPSamplerBase largeSampler = new HTTPNullSampler();
          largeSampler.setMethod(HTTPConstants.POST);
@@ -50,4 +50,3 @@
          assertEquals(2 * 1024 * 1024, largeData.length());
      }
  }
- 
