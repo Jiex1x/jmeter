@@ -22,3 +22,5 @@
 /bin/mirror-server text eol=lf executable
 /xdocs/changes.xml merge=union
 /xdocs/changes_history.xml merge=union
+
+plaintext* text=auto eol=lf
